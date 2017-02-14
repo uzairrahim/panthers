@@ -1,0 +1,27 @@
+@import 'src/scss/props';
+
+.side-menu {
+	position: fixed;
+	left: -250px;
+	width: 100%;
+	max-width: 250px;
+	height: 100%;
+	background-color: $white;
+	box-shadow: 0 4px 6px 0 rgba(0,0,0,0.35);
+
+	&.show {
+		left: 0;
+	}
+}
+
+
+@media (max-width: $tablet) {
+
+}
+
+@media (max-width: $phone) {
+	.side-menu {
+		left: -100%;
+		max-width: 100%;
+	}
+}

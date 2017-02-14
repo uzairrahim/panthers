@@ -1,0 +1,46 @@
+@import './props';
+
+.g-row{
+	display: flex;
+	justify-content: space-between;
+	width:100%;
+
+	&.wrap {
+		flex-wrap: wrap;
+	}
+}
+
+.g-col{
+	padding-left: $gutter/2;
+	box-sizing: border-box;
+
+	&:first-of-type {
+		padding-left: 0;
+		padding-right: $gutter/2;
+	}
+
+	&:last-of-type {
+		padding-right: 0;
+	}
+
+	&.one { flex: 1  }
+	&.two { flex: 2  }
+	&.thr { flex: 3  }
+	&.fou { flex: 4  }
+	&.fiv { flex: 5  }
+	&.six { flex: 6  }
+	&.sev { flex: 7  }
+	&.eig { flex: 8  }
+	&.nin { flex: 9  }
+	&.ten { flex: 10 }
+	&.ele { flex: 11 }
+	&.twe { flex: 12 }
+}
+
+@media screen and (max-width: $tablet) {
+	&.twe{ width: 100% }
+}
+
+@media screen and (max-width: $phone) {
+
+}

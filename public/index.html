@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ATX Panthers Cricket</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
+		<link rel="manifest" href="./manifest.json">
+		<link href="img/favicon.png" rel="shortcut icon" type="image/png">
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400|Roboto:100" rel="stylesheet">
+	</head>
+	<body>
+		<div id="root"></div>
+		<script src="js/main.min.js"></script>
+		<script type="text/javascript">
+
+			var _public_key = 'BOVuggNAU55kGHdEMNHzfN9fSxeXguVSe_kzPtH0Uc5RXJLx3Ww9TG8YKdfYWOgwPlzo3xAmckvfIy5kMh_ANxQ';
+
+			if('serviceWorker' in navigator){
+				navigator.serviceWorker.register('./service.js')
+				.then(function(registration){
+					console.log('ServiceWorker registration successful with:', registration);
+					initialiseSubscription(registration);
+				})
+				.catch(function(error){
+					console.log('ServiceWorker registration failed with error', error);
+				});
+			}
+
+			function urlB64ToUint8Array(base64String) {
+				const padding = '='.repeat((4 - base64String.length % 4) % 4);
+				const base64 = (base64String + padding)
+				.replace(/\-/g, '+')
+				.replace(/_/g, '/');
+
+				const rawData = window.atob(base64);
+				const outputArray = new Uint8Array(rawData.length);
+
+				for (let i = 0; i < rawData.length; ++i) {
+					outputArray[i] = rawData.charCodeAt(i);
+				}
+				return outputArray;
+			}
+
+			function initialiseSubscription(registration) {
+				registration.pushManager.getSubscription()
+				.then(function(subscription){
+					if(subscription === null){
+						console.log('User is not subscribed');
+						subscribeUser(registration);
+					}else{
+						alert(JSON.stringify(subscription));
+						console.log('User is subscribed', subscription);
+					}
+				})
+				.catch(function(error){
+					console.log('Failed to get subscription with:', error);
+				});
+			}
+
+			function subscribeUser(registration) {
+				registration.pushManager.subscribe({
+					userVisibleOnly : true,
+					applicationServerKey : urlB64ToUint8Array(_public_key)
+				})
+				.then(function(subscription){
+					console.log('User is subscribed', subscription);
+					updateUserSubscription(subscription);
+				})
+				.catch(function(error){
+					console.log('Failed to subscribe user with:', error);
+				});
+			}
+
+			function unsubscribeUser(registration) {
+				registration.pushManager.getSubscription()
+				.then(function(subscription){
+					if(subscription){
+						return subscription.unsubscribe();
+					}
+				})
+				.catch(function(error){
+					console.log('Failed to get subscription with:', error);
+				});
+			}
+
+			function updateUserSubscription(subscription) {
+				
+			}
+
+			window.addEventListener('online', function(event){
+				//console.log(event);
+			},false);
+
+			window.addEventListener('offline', function(event){
+				//console.log(event);
+			},false);
+
+		</script>
+	</body>
+</html>

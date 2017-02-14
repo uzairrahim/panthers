@@ -1,0 +1,33 @@
+.flex {
+    &.horizontal, &.horizontal-reverse, &.vertical, &.vertical-reverse { display: flex; }
+    &.inline { display: inline-flex; }
+    &.horizontal { flex-direction: row; }
+    &.horizontal-reverse { flex-direction: row-reverse; }
+    &.vertical { flex-direction: column; }
+    &.vertical-reverse { flex-direction: column-reverse; }
+    &.wrap { flex-wrap: wrap; }
+    &.wrap-reverse { flex-wrap: wrap-reverse; }
+    &.start { align-items: flex-start; }
+    &.center, &.center-center { align-items: center; }
+    &.end { align-items: flex-end; }
+    &.start-justified { justify-content: flex-start; }
+    &.center-justified, &.center-center { justify-content: center; }
+    &.end-justified { justify-content: flex-end; }
+    &.around-justified { justify-content: space-around; }
+    &.justified { justify-content: space-between; }
+
+    .f-1 { flex: 1; }
+    .f-2 { flex: 2; }
+    .f-3 { flex: 3; }
+    .f-4 { flex: 4; }
+    .f-5 { flex: 5; }
+    .f-6 { flex: 6; }
+    .f-7 { flex: 7; }
+    .f-8 { flex: 8; }
+    .f-9 { flex: 9; }
+    .f-10 { flex: 10; }
+    .f-11 { flex: 11; }
+    .f-12 { flex: 12; }
+    .f-auto { flex: 1 1 auto; }
+    .f-none { flex: none; }
+}

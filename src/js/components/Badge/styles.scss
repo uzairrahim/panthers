@@ -1,0 +1,66 @@
+@import 'src/scss/props';
+
+$badge-s: 40px;
+$badge-m: 60px;
+$badge-l: 120px;
+
+@mixin colors($color){
+	color: $color;
+	border-color: $color;
+}
+
+@mixin size($font, $size){
+	font-size: $font;
+	width: $size;
+	height: $size;
+}
+
+.badge {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: $secondary-font;
+	border-radius: 50%;
+	background-color: $white;
+	box-sizing: border-box;
+	border: 1px solid;
+	@include size(12px, $badge-s);
+	@include colors($l-gray);
+
+	&.medium {
+		@include size(30px, $badge-m);
+	}
+
+	&.large {
+		@include size(64px, $badge-l);
+	}
+
+	&.red {
+		@include colors($red);
+	}
+
+	&.green {
+		@include colors($green);
+	}
+
+	&.blue {
+		@include colors($blue);
+	}
+
+	&.pink {
+		@include colors($pink);
+	}
+
+	&.yellow {
+		@include colors($yellow);
+	}
+}
+
+@media (max-width: $tablet) {
+
+}
+
+@media (max-width: $phone) {
+
+}

@@ -1,0 +1,41 @@
+@import 'src/scss/props';
+
+.badge-row {
+
+	background-color: $white;
+	padding: $gutter 0;
+	box-sizing: border-box;
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		box-shadow: 2px 0 4px 0 rgba(0,0,0,0.15);
+	}
+}
+
+@media (max-width: $monitor) {
+
+}
+
+@media (max-width: $tablet) {
+		
+}
+
+@media (max-width: $phone) {
+	.badge-row {
+
+		.flex {
+			&.mr20 {
+				margin-right: 10px !important;
+			}
+		}
+
+		.badge {
+			font-family: $primary-font;
+			font-size: 12px !important;
+			width: 40px !important;
+			height: 40px !important;
+		}
+	}
+}

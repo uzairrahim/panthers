@@ -1,0 +1,80 @@
+@import 'src/scss/props';
+
+.select {
+
+	.label {
+		cursor: pointer;
+
+		&:hover {
+			color: $blue;
+		}
+
+		&:after {
+			position: relative;
+			display: inline-block;
+			font-size: 18px;
+			line-height: 14px;
+			top: 2px;
+			left: 8px;
+			content: '\203A';
+			transform: rotate(90deg);
+		}
+	}
+
+	.options {
+		position: absolute;
+		display: none;
+		flex-direction: column;
+		max-height: 200px;
+		min-width: 200px;
+		margin-top: 15px;
+		border: 1px solid $border-color;
+		border-radius: 4px;
+		background-color: $white;
+		box-shadow: 0 0 10px -2px rgba(0,0,0,0.05);
+		box-sizing: border-box;
+		overflow: auto;
+
+		&.show {
+			display: flex;
+		}
+
+		.option{
+			color: $d-gray;
+			font-size: 12px;
+			padding: 10px;
+			border-bottom: 1px solid $border-color;
+			box-sizing: border-box;
+			cursor: pointer;
+
+			&.selected {
+				color: $blue;
+				font-weight: bold;
+			}
+
+			&:hover {
+				color: $blue;
+			}
+
+			&:last-of-type {
+				border: none;
+			}
+		}
+	}
+}
+
+@media (max-width: $monitor) {
+
+}
+
+@media (max-width: $tablet) {
+	.select {
+		.options {
+			min-width: 100px;
+		}
+	}
+}
+
+@media (max-width: $phone) {
+
+}

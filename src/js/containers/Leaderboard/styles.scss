@@ -1,0 +1,30 @@
+@import 'src/scss/props';
+
+@media (max-width: $monitor) {
+
+}
+
+@media (max-width: $tablet) {
+
+	.g-row {
+		&.responsive {
+			margin: 0;
+			padding: 0;
+			flex-direction: column-reverse;
+			
+		}
+	}
+
+	.g-col {
+		&.responsive {
+			margin: 0;
+			padding: 0;
+			width: 100% !important;
+		}
+	}
+	
+}
+
+@media (max-width: $phone) {
+	
+}

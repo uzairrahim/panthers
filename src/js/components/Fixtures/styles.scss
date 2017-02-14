@@ -1,0 +1,8 @@
+@import 'src/scss/props';
+
+.fixture-row {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

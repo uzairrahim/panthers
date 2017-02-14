@@ -1,0 +1,25 @@
+@import 'src/scss/props';
+
+.layout {
+	.body {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		min-height: 100vh;
+		padding: $gutter;
+		box-sizing: border-box;
+		background-color: $body;
+	}
+}
+
+@media (max-width: $tablet) {
+	.layout {
+		.body {
+
+		}
+	}	
+}
+
+@media (max-width: $phone) {
+	
+}

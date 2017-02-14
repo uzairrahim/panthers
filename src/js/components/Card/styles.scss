@@ -1,0 +1,17 @@
+@import 'src/scss/props';
+
+.card {
+	width: 100%;
+	padding: $gutter;
+	box-sizing: border-box;
+	background-color: $white;
+	overflow: hidden;
+}
+
+@media (max-width: $tablet) {
+	
+}
+
+@media (max-width: $phone) {
+	
+}
